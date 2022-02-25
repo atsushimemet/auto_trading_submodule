@@ -18,6 +18,7 @@ class Model:
     def fit(self):
         self.clf = lgb.LGBMClassifier()
         self.df = pd.concat([self._datamart, self._feature], axis=1)
+        self.df.index = pd.to_datetime(self.df.index, unit="ms")
         self.X = self.df.iloc[:, 1:]
         self.y = self.df["target"]
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(

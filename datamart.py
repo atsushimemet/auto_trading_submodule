@@ -1,6 +1,6 @@
 # datamart.py
 import pandas as pd
-from .raw_data import RawData
+from raw_data import RawData
 
 
 class Datamart:
